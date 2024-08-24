@@ -1,0 +1,20 @@
+# in staging we are using the mysql db
+# MySQL datasource configuration
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/employee
+    username: root
+    password: Password
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 30000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      pool-name: MyHikariCP
+      register-mbeans: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
